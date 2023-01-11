@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import useFetch from "../customHooks/useFetch";
 
 function BlogDetails() {
@@ -17,6 +17,7 @@ function BlogDetails() {
       navigate("/");
     });
   };
+
   return (
     <div className="blog-details">
       {isLoading && <div>Loading....</div>}
@@ -27,6 +28,9 @@ function BlogDetails() {
           <p>Written by - {blog.author}</p>
           <div>{blog.body}</div>
           <button onClick={handleClick}>delete</button>
+          <Link to={`/blogs/update/${id}`}>
+            <button>update</button>
+          </Link>
         </article>
       )}
     </div>
