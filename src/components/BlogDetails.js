@@ -28,6 +28,8 @@ function BlogDetails() {
           <p>Written by - {blog.author}</p>
           <div>{blog.body}</div>
           <button onClick={handleClick}>delete</button>
+          <br />
+          <br />
           <Link to={`/blogs/update/${id}`}>
             <button>update</button>
           </Link>

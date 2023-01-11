@@ -16,7 +16,8 @@ function Update() {
   const [author, setAuthor] = useState("");
   const [isPending, setIsPending] = useState(false);
 
-  const handleUpdateSubmit = () => {
+  const handleUpdateSubmit = (e) => {
+    e.preventDefault();
     setIsPending(true);
     const blog = { title, body, author };
     fetch("http://localhost:8000/blogs/" + id, {
